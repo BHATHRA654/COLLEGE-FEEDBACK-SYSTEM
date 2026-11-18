@@ -1,0 +1,592 @@
+/* ── Dashboard Page ──────────────────────────────────────────── */
+.db-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ── Welcome banner ──────────────────────────────────────────── */
+.db-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.25rem 2.5rem;
+  background: linear-gradient(135deg, #EEF2FF 0%, #F0FDF4 100%);
+  border: 1px solid #E0E7FF;
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--radius-xl);
+}
+
+.db-banner-left { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 0.5rem; 
+  z-index: 2;
+}
+
+.db-greeting {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0;
+  font-weight: 500;
+}
+
+.db-name {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.db-role-badge {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  margin-top: 0.5rem;
+  padding: 0.35rem 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+}
+
+.db-banner-icon {
+  position: absolute;
+  right: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+/* ── Role Layouts (Faculty / Student) ─────────────────────────── */
+.db-role-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .db-role-layout {
+    grid-template-columns: 2.5fr 1fr;
+  }
+}
+
+.db-role-main {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+}
+
+.db-role-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ── Sections ────────────────────────────────────────────────── */
+.db-section {}
+
+.db-section-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.25rem;
+}
+
+/* ── Stat cards ──────────────────────────────────────────────── */
+.db-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.db-stat-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.db-stat-link .db-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.db-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.db-stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.25rem;
+}
+
+.db-stat-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.db-stat-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.db-stat-value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1.1;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── Quick Action Cards ──────────────────────────────────────── */
+.db-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.db-action-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.db-action-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.db-action-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.db-action-body {
+  flex: 1;
+}
+
+.db-action-label {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 0.25rem;
+}
+
+.db-action-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.db-action-arrow {
+  color: var(--text-muted);
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.db-action-card:hover .db-action-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* ── Profile/Context Card ────────────────────────────────────── */
+.db-profile-card {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.db-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.db-profile-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, #7C3AED 100%);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+  box-shadow: var(--shadow-md);
+}
+
+.db-profile-meta h4 {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.db-profile-meta p {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.db-profile-details {
+  border-top: 1px solid var(--border);
+  padding-top: 1.25rem;
+}
+
+.db-profile-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.db-profile-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.db-profile-item .label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.db-profile-item .val {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+/* ── Department Items & Lists ───────────────────────────────── */
+.db-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.db-list-item {
+  padding: 1.25rem;
+}
+
+.db-item-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.db-item-icon {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.db-item-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0 0 0.15rem;
+}
+
+.db-item-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* ── Feedback Items ─────────────────────────────────────────── */
+.db-feedback-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.db-feedback-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.db-fb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.db-fb-rating {
+  display: flex;
+  gap: 2px;
+}
+
+.db-fb-date {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.db-fb-course-tag {
+  font-size: 0.8rem;
+  background: var(--background);
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-main);
+  align-self: flex-start;
+}
+
+.db-fb-comment {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  margin: 0;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.db-fb-faculty-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.db-fb-faculty-sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.db-fb-meta-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+/* ── Colleagues List ────────────────────────────────────────── */
+.db-colleagues-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.db-colleague-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem 1.25rem;
+}
+
+.db-colleague-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #E0E7FF;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.db-colleague-info h5 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin: 0 0 0.15rem;
+}
+
+.db-colleague-info p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* ── Loading Skeletons ───────────────────────────────────────── */
+.db-skeleton-card {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+}
+
+.db-skeleton-pulse {
+  background: linear-gradient(90deg, #F3F4F6 25%, #E5E7EB 50%, #F3F4F6 75%);
+  background-size: 200% 100%;
+  animation: db-pulse-glow 1.5s infinite;
+}
+
+.db-skeleton-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-lg);
+  flex-shrink: 0;
+}
+
+.db-skeleton-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.db-skeleton-line {
+  height: 12px;
+  border-radius: var(--radius-sm);
+}
+
+.db-skeleton-line.short { width: 40%; }
+.db-skeleton-line.medium { width: 70%; }
+.db-skeleton-line.long { width: 100%; }
+
+.db-skeleton-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+@keyframes db-pulse-glow {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Error Widgets ───────────────────────────────────────────── */
+.db-error-widget {
+  background: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.db-error-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #991B1B;
+}
+
+.db-error-icon {
+  flex-shrink: 0;
+}
+
+.db-error-text {
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.db-retry-btn {
+  background: #FFF;
+  border: 1px solid #FCA5A5;
+  color: #991B1B;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.15s ease;
+}
+
+.db-retry-btn:hover {
+  background: #FEF2F2;
+  border-color: #EF4444;
+}
+
+/* ── Empty State Widgets ─────────────────────────────────────── */
+.db-empty-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.5rem;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-xl);
+  text-align: center;
+}
+
+.db-empty-icon {
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  opacity: 0.6;
+}
+
+.db-empty-text {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0;
+  font-weight: 500;
+}
+
+/* ── Utilities ───────────────────────────────────────────────── */
+.text-primary { color: var(--primary); }
+.spin { animation: db-spin 1s linear infinite; }
+
+@keyframes db-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.db-info-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.18);
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  color: #B45309;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .db-banner { flex-direction: column; align-items: flex-start; padding: 1.75rem; }
+  .db-banner-icon { display: none; }
+  .db-name { font-size: 1.75rem; }
+  .db-stats-grid  { grid-template-columns: 1fr; }
+  .db-actions-grid { grid-template-columns: 1fr; }
+  .db-list-grid { grid-template-columns: 1fr; }
+}

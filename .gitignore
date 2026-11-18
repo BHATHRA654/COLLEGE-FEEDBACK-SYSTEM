@@ -6,3 +6,7 @@ target/
 *.class
 *.jar
 *.log
+.env
+**/.env
+dist/
+**/dist/

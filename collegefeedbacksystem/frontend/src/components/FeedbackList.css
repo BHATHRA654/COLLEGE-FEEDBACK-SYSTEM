@@ -1,0 +1,249 @@
+/* ── Shared page header ───────────────────────────────────────── */
+.fl-header {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.fl-header h2 { margin: 0; font-size: 1.5rem; }
+.fl-header p  { margin: 0; color: var(--text-muted); }
+
+/* ── Loading ─────────────────────────────────────────────────── */
+.fl-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+}
+
+@keyframes fl-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.fl-spin { animation: fl-spin 1s linear infinite; }
+
+/* ── Error block ─────────────────────────────────────────────── */
+.fl-error-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* ── Success toast ───────────────────────────────────────────── */
+.fl-toast { margin-bottom: 1rem; }
+
+/* ── Empty state ─────────────────────────────────────────────── */
+.fl-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  gap: 0.75rem;
+}
+
+.fl-empty h3 { font-size: 1.125rem; margin: 0; }
+.fl-empty p  { color: var(--text-muted); max-width: 340px; line-height: 1.6; margin: 0; }
+
+/* ── Toolbar (search + filter) ───────────────────────────────── */
+.fl-toolbar {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.fl-search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 220px;
+}
+
+.fl-search-icon {
+  position: absolute;
+  left: 0.875rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.fl-search-input { padding-left: 2.75rem; padding-right: 2.5rem; }
+
+.fl-clear-btn {
+  position: absolute;
+  right: 0.875rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  padding: 0;
+  transition: color 0.15s;
+}
+
+.fl-clear-btn:hover { color: var(--danger); }
+
+.fl-filter-wrap { position: relative; min-width: 160px; max-width: 180px; }
+.fl-filter-icon {
+  position: absolute;
+  left: 0.875rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  pointer-events: none;
+}
+.fl-filter-select { padding-left: 2.5rem; }
+
+/* ── Table cell content ──────────────────────────────────────── */
+.fl-name    { font-weight: 500; color: var(--text-main); font-size: 0.9rem; }
+.fl-sub     { font-size: 0.76rem; color: var(--text-muted); margin-top: 0.1rem; }
+.fl-code    { margin-top: 0.25rem; display: inline-block; font-size: 0.7rem; }
+.fl-comments {
+  font-size: 0.875rem;
+  color: var(--text-main);
+  max-width: 260px;
+  white-space: pre-wrap;
+  line-height: 1.5;
+}
+
+.fl-rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* ── Student card view ───────────────────────────────────────── */
+.fl-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.fl-card {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}
+
+.fl-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.fl-card-course {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+}
+
+.fl-card-course-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.fl-card-code {
+  margin-top: 0.25rem;
+  display: inline-block;
+  font-size: 0.72rem;
+}
+
+.fl-card-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  flex-shrink: 0;
+}
+
+.fl-star-row {
+  display: flex;
+  gap: 0.1rem;
+}
+
+.fl-card-rating-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.fl-card-faculty {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text-main);
+}
+
+.fl-card-designation {
+  color: var(--text-muted);
+  font-size: 0.82rem;
+}
+
+.fl-card-comments {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-style: italic;
+  border-left: 3px solid var(--border);
+  padding-left: 0.75rem;
+  margin: 0;
+}
+
+.fl-card-date {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin: 0;
+  margin-top: auto;
+}
+
+/* ── Delete confirm overlay ──────────────────────────────────── */
+.fl-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.15s ease;
+}
+
+.fl-confirm {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 400px;
+  padding: 1.75rem;
+  animation: modalSlideIn 0.2s ease;
+}
+
+.fl-confirm h3 { font-size: 1.125rem; margin: 0 0 0.75rem; }
+.fl-confirm p  { margin: 0 0 1.25rem; color: var(--text-muted); line-height: 1.6; }
+
+.fl-confirm-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .fl-cards { grid-template-columns: 1fr; }
+  .fl-toolbar { flex-direction: column; }
+  .fl-filter-wrap { max-width: 100%; }
+}

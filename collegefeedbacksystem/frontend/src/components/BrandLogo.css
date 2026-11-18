@@ -1,0 +1,75 @@
+.brand-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon-box {
+  background: var(--primary, #7c3aed);
+  background: linear-gradient(135deg, var(--primary, #7c3aed) 0%, #4c1d95 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 6px;
+  box-shadow: 0 4px 10px rgba(124, 58, 237, 0.25);
+}
+
+.brand-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-logo-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-color, #1e1b4b);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.brand-logo-subtitle {
+  font-size: 0.75rem;
+  color: var(--text-muted, #6b7280);
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Auth card variant styling */
+.brand-logo-wrap.auth {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.brand-logo-wrap.auth .brand-icon-box {
+  padding: 14px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.35);
+}
+
+.brand-logo-wrap.auth .brand-logo-title {
+  font-size: 2rem;
+  color: var(--text-main, #111827);
+}
+
+.brand-logo-wrap.auth .brand-logo-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted, #6b7280);
+}
+
+/* Sidebar variant styling */
+.brand-logo-wrap.sidebar {
+  gap: 10px;
+}
+
+.brand-logo-wrap.sidebar .brand-logo-title {
+  color: var(--text-main, #111827);
+  font-size: 1.2rem;
+}
+
+.brand-logo-wrap.sidebar .brand-logo-subtitle {
+  color: var(--text-muted, #6b7280);
+}
